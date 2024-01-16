@@ -1,0 +1,15 @@
+{
+  "name": "promo",
+  "version": "2.0.0",
+  "description": "ecommerce application",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backEnd/server.js"
+  },
+  "author": "Eduardo",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
