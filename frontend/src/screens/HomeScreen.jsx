@@ -1,9 +1,25 @@
+
+import {useEffect, useState} from "react";
+import axios from "axios"
 import { Col, Row } from "react-bootstrap";
 import Product from "../components/product"
-import products from "../products"
 
+const HomePage = () => {
+    const [products, setProduct] = useState([]);
 
-const home = () => {
+    useEffect(() => {
+        const fetchProduct = async () => {
+            try {
+                const { data } = await axios.get('/api/products');
+                setProduct(data);
+            } catch (error) {
+                console.error('Error fetching data: ', error);
+            }
+        };
+    
+        fetchProduct();
+    }, []);
+    
     return (
         <>
         <Row>
@@ -19,4 +35,4 @@ const home = () => {
     )
 }
 
-export default home; 
+export default HomePage; 

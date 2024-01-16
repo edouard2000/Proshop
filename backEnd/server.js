@@ -1,11 +1,17 @@
 import express from 'express';
+import dotenv from "dotenv";
+dotenv.config();
+
 import products from './Data/products.js';
-const port = 3000;
+const port = process.env.PORT || 5000;
 const app = express();
 
 // fetching all product together
 app.get("/", (req, res) => res.send('Hello World!'));
-app.get("/api/products", (req, res) => res.json(products));
+app.get("/api/products", (req, res) => {
+    // console.log(products);
+    res.json(products)
+});
 
 
 // fetching single product
