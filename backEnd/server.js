@@ -21,5 +21,5 @@ app.get("/api/products/:id", (req, res) => {
     res.json(product); 
 });
 
-// initiating server
+// Initiating server
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
